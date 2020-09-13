@@ -1,0 +1,12 @@
+<center>
+    <h1>Ajouter un Club</h1>
+
+    {{ form_start(form) }}
+    Nom*:{{ form_widget(form.Nom) }}</Br>
+    Description*:{{ form_widget(form.Description) }}</Br>
+    Adresse*:{{ form_widget(form.Adresse) }}</Br>
+    Domaine*:{{ form_widget(form.Domaine) }}</Br>
+    {{ form_widget(form.save) }}</Br>
+    {{ form_end(form) }}
+</center>
+

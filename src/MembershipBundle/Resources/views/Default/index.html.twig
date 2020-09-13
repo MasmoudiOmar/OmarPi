@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <!-- Bootstrap core CSS -->
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
+        <!-- Custom styles for this template -->
+        <link href="{{ asset('css/plans.css') }}" rel="stylesheet" />
+        <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Open+Sans:300,400,700">
+    {% endblock %}
+</head>
+<body>
+<div class="main">
+    <table class="price-table">
+        <tbody>
+        <tr>
+            <td class="price-blank"></td>
+            <td class="price-blank"></td>
+            <td class="price-table-popular">Most popular</td>
+            <td class="price-blank"></td>
+        </tr>
+        <tr class="price-table-head">
+            <td></td>
+            {% for i in plans %}
+
+            <td>
+                {{ i.name }}
+                <br><small style="font-size: 12px; font-weight: 400;">{{ i.description }}</small>
+            </td>
+        {% endfor %}
+        </tr>
+        <tr>
+            <td></td>
+            {% for i in plans %}
+
+                <td class="price">
+                    <img
+                            src="{{ asset('img/'~i.name~'.svg') }}"
+                            alt="triangle withall three sides equal"
+                            height="87"
+                            width="90" />
+
+                    <br>
+
+                    <br>{{ i.price }}
+                    $/mo
+                    <br>
+                    {{ i.description }}
+                </td>
+            {% endfor %}
+        </tr>
+
+            <tr>
+                <td><a href="#wordpress-asset-updates" class="price-table-help"><i class="far fa-fw fa-question-circle"></i></a> Price</td>
+                {% for i in plans %}
+                    <td>{{ i.price }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td><a href="#wordpress-core-updates" class="price-table-help"><i class="far fa-fw fa-question-circle"></i></a>Ads Quota</td>
+                {% for i in plans %}
+                    <td>{{ i.quota }}</td>
+                {% endfor %}
+            </tr>
+
+        <tr>
+            <td></td>
+            {% for i in plans %}
+                <td class="price">
+                    <a href="#" onclick="subscribe({{ i.id }})">Subscribe</a>
+                </td>
+            {% endfor %}
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+{% block javascripts %}
+<script src="{{ asset('js/plans.js') }}"></script>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,27 @@
+<center>
+<table border="3" class="Club">
+        <tr>
+            <td>Id</td>
+            <td>Nom</td>
+            <td>Description</td>
+            <td>Adresse</td>
+            <td>Domaine</td>
+            <td>Supprimer</td>
+            <td>Modifier</td>
+        </tr>
+        {% for i in clubs %}
+            <tr>
+                <td>{{ i.Id }}</td>
+                <td>{{ i.Nom }}</td>
+                <td>{{ i.Description }}</td>
+                <td>{{ i.Adresse }}</td>
+                <td>{{ i.Domaine }}</td>
+                <td><a href="{{ path('club_delete',{'id':i.Id})}}"><button>Supprimer</button></a></td>
+                <td><a href="{{ path('club_update',{'id':i.Id})}}"><button>Modifier</button></a></td>
+            </tr>
+        {% endfor %}
+</table>
+    <center> <a href="{{ path('club_create')}}"><button>Ajouter</button></a></center>
+</center>
+
+

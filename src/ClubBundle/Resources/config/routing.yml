@@ -1,0 +1,54 @@
+club_homepage:
+    path:     /
+    defaults: { _controller: ClubBundle:Default:index }
+
+club_home:
+    path:     /Affiche
+    defaults: { _controller: ClubBundle:Club:Affiche }
+
+club_homePage:
+    path:     /Home
+    defaults: { _controller: ClubBundle:Club:Home }
+
+club_read:
+    path:     /read/{nom}
+    defaults: { _controller: ClubBundle:Club:read }
+
+club_list:
+    path:     /list
+    defaults: { _controller: ClubBundle:Club:list }
+
+club_show:
+    path:     /show/{ref}
+    defaults: { _controller: ClubBundle:Club:showFormation }
+
+club_readAll:
+    path:     /readAll
+    defaults: { _controller: ClubBundle:Club:readAll }
+
+club_delete:
+    path:     /delete/{id}
+    defaults: { _controller: ClubBundle:Club:delete }
+
+club_create:
+    path:     /create
+    defaults: { _controller: ClubBundle:Club:create }
+
+club_update:
+    path:     /update/{id}
+    defaults: { _controller: ClubBundle:Club:update }
+
+formation_readAll:
+    path:     /readAllformation
+    defaults: { _controller: ClubBundle:Formation:readF }
+
+formation_create:
+    path:     /createF
+    defaults: { _controller: ClubBundle:Formation:createF }
+
+formation_recherche:
+    path:     /recherche
+    defaults: { _controller: ClubBundle:Formation:rechercheF }
+
+
+

@@ -1,0 +1,21 @@
+MembershipBundle\Entity\Plan:
+    type: entity
+    table: null
+    repositoryClass: MembershipBundle\Repository\PlanRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        price:
+            type: float
+        quota:
+            type: integer
+        description:
+            type: string
+    lifecycleCallbacks: {  }

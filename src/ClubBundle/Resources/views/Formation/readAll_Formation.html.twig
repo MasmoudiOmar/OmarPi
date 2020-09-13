@@ -1,0 +1,27 @@
+<center>
+    <table border="3" class="Formation">
+        <tr>
+            <td>Ref</td>
+            <td>Titre</td>
+            <td>Description</td>
+            <td>Date de debut</td>
+            <td>Date de fin</td>
+            <td>Nombre des participants</td>
+            <td>Club associé</td>
+        </tr>
+        {% for i in formations %}
+            <tr>
+                <td>{{ i.Ref }}</td>
+                <td>{{ i.Titre }}</td>
+                <td>{{ i.Description }}</td>
+                <td>{{ i.DateDebut | date }}</td>
+                <td>{{ i.DateFin | date }}</td>
+                <td>{{ i.nbParticipant }}</td>
+                <td>{{ i.idClub.Nom }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <center> <a href="{{ path('formation_create')}}"><button>Ajouter</button></a></center>
+</center>
+
+

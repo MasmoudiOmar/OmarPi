@@ -1,0 +1,12 @@
+membership_ads:
+    resource: "@MembershipBundle/Resources/config/routing/ads.yml"
+    prefix:   /ads
+
+membership_homepage:
+    path:     /
+    defaults: { _controller: MembershipBundle:Default:index }
+
+subscribetoplan:
+    path:     /subscribe/{id}
+    defaults: { _controller: "MembershipBundle:Default:subscribe" }
+    methods:  POST

@@ -1,0 +1,28 @@
+<table border="3">
+    {% if tab==NULL %}
+        <h3>Pas de formation !! </h3>
+    {% else %}
+    <tr>
+        <td>Ref</td>
+        <td>Titre</td>
+        <td>Description</td>
+         <td>Date de Début</td>
+         <td>Date de fin</td>
+         <td>nb de pratiquants</td>
+        <td>Action</td>
+     </tr>
+     {% for i in tab %}
+         <tr>
+             <td>{{ i.ref }}</td>
+             <td>{{ i.titre | upper }}</td>
+             <td>{{ i.description }}</td>
+             <td>{{ i.dateDebut }}</td>
+             <td>{{ i.dateFin }}</td>
+             <td>{{ i.nbPratiquants }}</td>
+             <td><a href="{{ path('club_show',{'ref':i.ref})}}"><button>Participer</button></a></td>
+        </tr>
+    {% endfor %}
+    {% endif %}
+</table>
+
+<h1> le nombre de formation est {{ tab|length }}</h1>
