@@ -1,7 +1,7 @@
 <?php
 
 namespace MembershipBundle\Entity;
-
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Plan
  */
@@ -139,11 +139,7 @@ class Plan
         return $this->quota;
     }
 
-    /**
-     * @ORM\ManyToMany(targetEntity="UserBundle\Entity\User",inversedBy="plan")
-     * @ORM\JoinTable(name="fos_user_user_plan")
-     * )
-     */
-    protected $users;
+
+
 }
 

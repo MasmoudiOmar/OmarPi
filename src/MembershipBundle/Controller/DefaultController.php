@@ -1,12 +1,12 @@
 <?php
 
 namespace MembershipBundle\Controller;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 use MembershipBundle\Entity\Plan;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-use Symfony\Component\HttpFoundation\Response;
 
 
 class DefaultController extends Controller
@@ -17,22 +17,16 @@ class DefaultController extends Controller
         $plans=$this->getDoctrine()->getRepository(Plan::class)->findAll();
         return $this->render('@Membership/Default/index.html.twig',array('plans'=>$plans));
     }
-    public function subscribeAction(Request $request,$id){
-        if($request->isXmlHttpRequest()){
+    public function subscribeAction($id){
                 $plan =  $this->getDoctrine()->getRepository(Plan::class)->find($id);
-                $this->getDoctrine()->getRepository(User::class)->subscribeToPlan($plan);
-                echo $id;
-                die();
-                return new Response(
-                    $plan,
-                    Response::HTTP_OK
-                );
+                $u = $this->getUser();
+                $u->setPlan($plan);
 
-        }
 
-        return new Response(
-            $id,
-            Response::HTTP_OK
-        );
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($u);
+                $entityManager->flush();
+                return $this->redirectToRoute('ads_index');
+
     }
 }

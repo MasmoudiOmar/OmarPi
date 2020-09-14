@@ -6,6 +6,10 @@ membership_homepage:
     path:     /
     defaults: { _controller: MembershipBundle:Default:index }
 
+membership_plans:
+    resource: "@MembershipBundle/Resources/config/routing/plan.yml"
+    prefix:   /plan
+
 subscribetoplan:
     path:     /subscribe/{id}
     defaults: { _controller: "MembershipBundle:Default:subscribe" }

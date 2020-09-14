@@ -64,27 +64,64 @@ class User extends BaseUser
         $this->prenom = $prenom;
     }
 
+    /**
+     * @return Plan
+     */
+    public function getPlan()
+    {
+        return $this->plan;
+    }
 
     /**
-     * @ORM\ManyToMany(targetEntity="MembershipBundle\Entity\Plan",inversedBy="user")
-     * @ORM\JoinTable(name="fos_user_user_plan")
-     * )
+     * @param Plan $plan
      */
-    protected $plans;
-    public function subscribeToPlan(Plan $plan)
+    public function setPlan($plan)
+    {
+        $this->plan = $plan;
+    }
+
+    /**
+     * @var Plan
+     *
+     * @ORM\ManyToOne(targetEntity="MembershipBundle\Entity\Plan")
+     * @ORM\JoinColumn(name="plan_id", referencedColumnName="id")
+     */
+    private $plan;
+
+   /** public function addPlan(Plan $plan)
     {
 
         if (!$this->plans->contains($plan)) {
-            $this->plans[] = $plan;
+            $this->plans->add($plan);
         }
 
         return $this;
-    }
+    }**/
+    /**
+     * @ORM\OneToMany(targetEntity="MembershipBundle\Entity\Ads", mappedBy="user")
+     */
+    private $advertisments;
     public function __construct()
     {
         parent::__construct();
-        $this->plans = new ArrayCollection();
+       // $this->plans = new ArrayCollection();
         // your own logic
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAdvertisments()
+    {
+        return $this->advertisments;
+    }
+
+    /**
+     * @param mixed $advertisments
+     */
+    public function setAdvertisments($advertisments)
+    {
+        $this->advertisments = $advertisments;
     }
 }
 

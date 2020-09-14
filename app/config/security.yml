@@ -7,9 +7,9 @@ security:
         FOS\UserBundle\Model\UserInterface: bcrypt
 
     role_hierarchy:
-        ROLE_ADMIN:       ROLE_USER
         ROLE_CLIENT:       ROLE_USER
         ROLE_PROVIDER:       ROLE_USER
+        ROLE_ADMIN:       ROLE_CLIENT
         ROLE_SUPER_ADMIN: ROLE_ADMIN
 
     providers:
@@ -32,7 +32,8 @@ security:
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/affichage, role: ROLE_USER }
-        - { path: ^/membership, role: ROLE_USER }
+        - { path: ^/membership/ads, role: ROLE_USER }
+        - { path: ^/membership/plan , roles: ROLE_USER }
 
 
 

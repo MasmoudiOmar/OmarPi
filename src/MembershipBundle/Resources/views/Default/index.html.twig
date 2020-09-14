@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <title>{% block title %}Welcome!{% endblock %}</title>
-    {% block stylesheets %}
-        <!-- Bootstrap core CSS -->
-        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
-        <!-- Custom styles for this template -->
-        <link href="{{ asset('css/plans.css') }}" rel="stylesheet" />
-        <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Open+Sans:300,400,700">
-    {% endblock %}
-</head>
-<body>
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
 <div class="main">
     <table class="price-table">
         <tbody>
@@ -80,5 +70,4 @@
 {% block javascripts %}
 <script src="{{ asset('js/plans.js') }}"></script>
 {% endblock %}
-</body>
-</html>
+{% endblock %}

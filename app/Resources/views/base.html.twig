@@ -5,121 +5,226 @@
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}
         <!-- Bootstrap core CSS -->
-        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
         <!-- Custom styles for this template -->
-        <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
-        <link href="{{ asset('css/slick-theme.css') }}" rel="stylesheet" />
+        <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}s">
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/nice-select.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/gijgo.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
         <link href="{{ asset('css/slick.css') }}" rel="stylesheet" />
+        <link rel="stylesheet" href="{{ asset('css/slicknav.css') }}">
+        <link href="{{ asset('css/plans.css') }}" rel="stylesheet" />
+        <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Open+Sans:300,400,700">
+
+
+        <link rel="stylesheet" href="{{ asset('css/styletheme.css') }}">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
     {% endblock %}
 </head>
 <body>
+{% block header %}
+<header>
+    <div class="header-area ">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container-fluid">
+                <div class="header_bottom_border">
+                    <div class="row align-items-center">
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="img/logo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a class="active" href="index.html">home</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a class="" href="travel_destination.html">Destination</a></l/li>
+                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="destination_details.html">Destinations details</a></li>
+                                                <li><a href="elements.html">elements</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="blog.html">blog</a></li>
+                                                <li><a href="single-blog.html">single-blog</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 d-none d-lg-block">
+                            <div class="social_wrap d-flex align-items-center justify-content-end">
+                                <div class="number">
+                                    <p> <i class="fa fa-phone"></i> 10(256)-928 256</p>
+                                </div>
+                                <div class="social_links d-none d-xl-block">
+                                    <ul>
+                                        <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                        <li><a href="#"> <i class="fa fa-linkedin"></i> </a></li>
+                                        <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                        <li><a href="#"> <i class="fa fa-google-plus"></i> </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="seach_icon">
+                            <a data-toggle="modal" data-target="#exampleModalCenter" href="#">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
 
 {% block content %}
     <!-- develop the content of the page -->
 {% endblock %}
 {% block footer %}
-    <!-- develop the footer of the page -->
-    {#<footer class="py-g bg-dark">#}
-    {#<div class="container">#}
-    {#<p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>#}
-    {#</div>#}
-    {#</footer>#}
-    <footer id="footer" class="section section-grey">
-        <!-- container -->
-        <div class="container">
-            <!-- row -->
-            <div class="row">
-                <!-- footer widget -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="footer">
-                        <!-- footer logo -->
-                        <div class="footer-logo">
-                            <a class="logo" href="#">
-                                <img src="./img/logo.png" alt="">
-                            </a>
-                        </div>
-                        <!-- /footer logo -->
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
 
-                        <!-- footer social -->
-                        <ul class="footer-social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                        </ul>
-                        <!-- /footer social -->
-                    </div>
-                </div>
-                <!-- /footer widget -->
-
-                <!-- footer widget -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="footer">
-                        <h3 class="footer-header">My Account</h3>
-                        <ul class="list-links">
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">My Wishlist</a></li>
-                            <li><a href="#">Compare</a></li>
-                            <li><a href="#">Checkout</a></li>
-                            <li><a href="#">Login</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- /footer widget -->
-
-                <div class="clearfix visible-sm visible-xs"></div>
-
-                <!-- footer widget -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="footer">
-                        <h3 class="footer-header">Customer Service</h3>
-                        <ul class="list-links">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Shiping & Return</a></li>
-                            <li><a href="#">Shiping Guide</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- /footer widget -->
-
-                <!-- footer subscribe -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="footer">
-                        <h3 class="footer-header">Stay Connected</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-                        <form>
-                            <div class="form-group">
-                                <input class="input" placeholder="Enter Email Address">
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 col-lg-4 ">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img src="img/footer_logo.png" alt="">
+                                </a>
                             </div>
-                            <button class="primary-btn">Join Newslatter</button>
-                        </form>
+                            <p>5th flora, 700/D kings road, green <br> lane New York-1782 <br>
+                                <a href="#">+10 367 826 2567</a> <br>
+                                <a href="#">contact@carpenter.com</a>
+                            </p>
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-twitter-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-pinterest"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-youtube-play"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Company
+                            </h3>
+                            <ul class="links">
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#"> Gallery</a></li>
+                                <li><a href="#"> Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Popular destination
+                            </h3>
+                            <ul class="links double_links">
+                                <li><a href="#">Indonesia</a></li>
+                                <li><a href="#">America</a></li>
+                                <li><a href="#">India</a></li>
+                                <li><a href="#">Switzerland</a></li>
+                                <li><a href="#">Italy</a></li>
+                                <li><a href="#">Canada</a></li>
+                                <li><a href="#">Franch</a></li>
+                                <li><a href="#">England</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Instagram
+                            </h3>
+                            <div class="instagram_feed">
+                                <div class="single_insta">
+                                    <a href="#">
+                                        <img src="img/instagram/1.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="single_insta">
+                                    <a href="#">
+                                        <img src="img/instagram/2.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="single_insta">
+                                    <a href="#">
+                                        <img src="img/instagram/3.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="single_insta">
+                                    <a href="#">
+                                        <img src="img/instagram/4.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="single_insta">
+                                    <a href="#">
+                                        <img src="img/instagram/5.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="single_insta">
+                                    <a href="#">
+                                        <img src="img/instagram/6.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- /footer subscribe -->
             </div>
-            <!-- /row -->
-            <hr>
-            <!-- row -->
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center">
-                    <!-- footer copyright -->
-                    <div class="footer-copyright">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </div>
-                    <!-- /footer copyright -->
-                </div>
-            </div>
-            <!-- /row -->
         </div>
-        <!-- /container -->
+
     </footer>
+
 {% endblock %}
 {% block javascripts %}{% endblock %}
 </body>
