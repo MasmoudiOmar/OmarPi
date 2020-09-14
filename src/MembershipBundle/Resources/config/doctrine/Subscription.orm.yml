@@ -1,0 +1,24 @@
+MembershipBundle\Entity\Subscription:
+    type: entity
+    table: null
+    repositoryClass: MembershipBundle\Repository\SubscriptionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        planId:
+            type: integer
+            column: plan_id
+        userId:
+            type: integer
+            column: user_id
+        startDate:
+            type: datetime
+            column: start_date
+        endDate:
+            type: datetime
+            column: end_date
+    lifecycleCallbacks: {  }

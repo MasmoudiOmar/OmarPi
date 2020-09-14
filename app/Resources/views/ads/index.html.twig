@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>My Ads</h1>
+    <div class="ads_container">
+    <div class="cards">
+        {% for ad in ads %}
+
+                <div class="card-item">
+                    <div class="card-image">
+                        <img src="{{ ad.image }}">
+                    </div>
+                    <div class="card-info">
+                        <h2 class="card-title">{{ ad.name }}</h2>
+                        <p class="card-intro">{{ ad.description }}.</p>
+                    </div>
+                    <div class="actions">
+
+                        <a href="{{ path('ads_edit', { 'id': ad.id }) }}"><img src="{{ asset('img/edit.png') }}" /></a>
+
+                    </div>
+                            </div>
+
+
+
+
+        {% endfor %}
+    </div>
+
+    </div>
+{% endblock %}

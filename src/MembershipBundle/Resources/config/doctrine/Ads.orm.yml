@@ -1,0 +1,27 @@
+MembershipBundle\Entity\Ads:
+    type: entity
+    table: null
+    repositoryClass: MembershipBundle\Repository\AdsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        description:
+            type: string
+            length: 255
+        image:
+            type: string
+            length: 255
+    manyToOne:
+        user:
+            targetEntity: UserBundle\Entity\User
+            inversedBy: advertisments
+            joinColumn:
+                nullable: false
+    lifecycleCallbacks: {  }
